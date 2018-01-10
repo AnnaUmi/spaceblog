@@ -1,0 +1,73 @@
+header.header
+	.container
+		.header__top
+			.logo
+				a(href="#").logo__link
+					svg.logo__svg
+						use(xlink:href='/assets/img/sprite.svg#telescope')
+					span.logo__title SpaceUmi
+
+			.search
+				form.search__form
+					input(type="text").search__field
+					button(type="submit").search__icon
+						svg.search__svg
+							use(xlink:href='/assets/img/sprite.svg#magnifier')
+			.login.header__indents-login
+				a(href="#").login__link Вход
+			.header__mobil 
+				.one
+				.two
+				.three
+		.header__menu
+			include ../common/_menu
+			//- .menu
+			//- 	ul.menu__list
+			//- 		li.menu__item
+			//- 			a(href="index.html").menu__link Главная
+			//- 		li.menu__item
+			//- 			a(href="news.html").menu__link Новости
+			//- 		li.menu__item
+			//- 			a(href="articles.html").menu__link Статьи
+			//- 			ul.submenu__list
+			//- 				li.submenu__item
+			//- 					a(href="#").submenu__link Солнечная система
+			//- 				li.submenu__item
+			//- 					a(href="#").submenu__link Черные дыры
+			//- 				li.submenu__item
+			//- 					a(href="#").submenu__link Техника
+			//- 				li.submenu__item
+			//- 					a(href="#").submenu__link Будущее
+			//- 		li.menu__item
+			//- 			a(href="photo.html").menu__link Фото
+			//- 		li.menu__item
+			//- 			a(href="about.html").menu__link О проекте
+			//- 		li.menu__item
+			//- 			a(href="support.html").menu__link Спонсоры
+			//- 		li.menu__item
+			//- 			a(href="contacts.html").menu__link Контакты
+			.mobil-nav__wrapper
+						nav.mobil-nav#mobil-nav.mobil-nav--nodisplay
+							ul.mobil-nav__list
+								li.mobil-nav__item
+									a(href="index.html").mobil-nav__link Главная
+								li.mobil-nav__item
+									a(href="news.html").mobil-nav__link Новости
+								li.mobil-nav__item
+									a(href="articles.html").mobil-nav__link Статьи
+								li.mobil-nav__item
+									a(href="articles.html").mobil-nav__link Солнечная система
+								li.mobil-nav__item
+									a(href="articles.html").mobil-nav__link Черные дыры
+								li.mobil-nav__item
+									a(href="articles.html").mobil-nav__link Техника
+								li.mobil-nav__item
+									a(href="articles.html").mobil-nav__link Будущее
+								li.mobil-nav__item
+									a(href="photo.html").mobil-nav__link Фото
+								li.mobil-nav__item
+									a(href="about.html").mobil-nav__link О проекте
+								li.mobil-nav__item
+									a(href="support.html").mobil-nav__link Спонсоры
+								li.mobil-nav__item
+									a(href="contacts.html").mobil-nav__link Контакты

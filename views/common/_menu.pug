@@ -1,0 +1,5 @@
+.menu
+    ul.menu__list
+        each href, title in links
+            li.menu__item
+                a(href=`${href}`).menu__link= title

@@ -1,0 +1,8 @@
+{
+  "upload":"./upload",
+  "mail": {
+    "subject": "Сообщение с сайта-портфолио",
+    "user": "webinar.loftschool@gmail.com",
+    "pass": "qsc12345"
+  }
+}

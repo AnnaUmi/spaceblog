@@ -1,5 +1,5 @@
 {
-  "upload":"public/upload",
+  "upload":"public/upload", 
   "mail": {
     "subject": "Сообщение с сайта-портфолио",
     "user": "anna.a.vlasenko@gmail.com",

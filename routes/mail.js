@@ -1,4 +1,4 @@
-/*const express = require('express');
+const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer');
 const config = require('../config.json');
@@ -47,4 +47,4 @@ router.post('/', (req, res) => {
   });
 });
 
-module.exports = router;*/
+module.exports = router;

@@ -28,7 +28,11 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "formidable": "^1.1.1",
+    "mongoose": "^4.10.8",
     "morgan": "^1.9.0",
+    "nodemailer": "^4.4.1",
+    "nodemailer-smtp-transport": "^2.7.4",
     "normalize.css": "~5.0.0"
   }
 }

@@ -7,8 +7,18 @@ const logger = require('morgan');
 const bodyParser = require('body-parser'); // для работы с полями формы
 const server = http.createServer(app);
 const currentStatic = require('./gulp/config').root; // наши статические данные с config.js и вытаскиваем парамерт root
-//const config = require('./config.json');
-//const uploadDir = config.upload;
+const config = require('./config.json');
+const uploadDir = config.upload;
+
+const mongoose = require('mongoose');
+mongoose.Promise = global.Promise; // заменяем промисы монгусв на промисы ноды, так как они устаревшие у монгуса
+mongoose.connect('mongodb://anna_umi:945xdh422@ds247077.mlab.com:47077/savemyblogposts');
+
+
+//подключаем модели(сущности, описывающие коллекции базы данных)
+require('./models/blog');
+require('./models/pic');
+require('./models/user');
 
 // подключаю шаблонизатор
 app.set('views', path.join(__dirname, 'views'));
@@ -21,7 +31,8 @@ app.use(express.static(path.join(__dirname, currentStatic)));
 
 app.use('/', require('./routes/index'));
 app.use('/upload', require('./routes/upload'));
-//app.use('/contact', require('./routes/mail'));
+app.use('/contact', require('./routes/mail'));
+app.use('/addpost', require('./routes/addpost'));
 
 // 404 catch-all handler (middleware)
 app.use(function (req, res, next) {
@@ -41,5 +52,12 @@ app.use(function (err, req, res, next) {
 // запускаю сервер
 server.listen(3000, 'localhost');
 server.on('listening', function () {
+   if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir);
+  }
   console.log('Express server started on port %s at %s', server.address().port, server.address().address);
 });
+
+if (app.get('env') === 'development') {
+  app.locals.pretty = true;
+}

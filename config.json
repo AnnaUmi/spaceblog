@@ -1,8 +1,8 @@
 {
-  "upload":"./upload",
+  "upload":"public/upload",
   "mail": {
     "subject": "Сообщение с сайта-портфолио",
-    "user": "webinar.loftschool@gmail.com",
-    "pass": "qsc12345"
+    "user": "anna.a.vlasenko@gmail.com",
+    "pass": "AllMyDreamsComeTrue2017"
   }
 }

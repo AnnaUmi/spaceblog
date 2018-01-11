@@ -1,0 +1,14 @@
+extends ../_template
+block content
+	.wrapper
+		.content
+			include ../common/_header
+				section.section
+					.container
+						h2 lala
+						ul
+							each index in items
+								figure
+									p
+										img(src=`${index.picture}`)
+									figcaption= index.name

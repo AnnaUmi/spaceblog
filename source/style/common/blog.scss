@@ -1,4 +1,4 @@
-.blog__textfield{
+.article__textfield{
 	display: none;
 	width: 100%;
 	height: 100%;
@@ -12,9 +12,9 @@
 	overflow: hidden;
 	margin: 0 auto;
 }
-.editing .blog__textfield {
+.editing {
     display: block;
 }
-.editing .blog__article{
+.editing {
     display: none;
 }

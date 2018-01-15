@@ -3,8 +3,8 @@ const app = express();
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const logger = require('morgan');
-const bodyParser = require('body-parser'); // для работы с полями формы
+const logger = require('morgan'); // выполняет дебаг, все логи в консоле, отслеживаем ошибки
+const bodyParser = require('body-parser'); // для работы с полями формы (получать запросы)
 const server = http.createServer(app);
 const currentStatic = require('./gulp/config').root; // наши статические данные с config.js и вытаскиваем парамерт root
 const config = require('./config.json');
@@ -24,33 +24,32 @@ require('./models/user');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+// промежуточное по (midleware), все запросы кот, приходят на сервер пропускаются через промежуточное по
 app.use(logger('dev'));
 app.use(bodyParser.json()); // распарсивание значений с post запросов
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(express.static(path.join(__dirname, currentStatic)));
+app.use(express.static(path.join(__dirname, currentStatic))); 
 
-app.use('/', require('./routes/index'));
+
+// использование роутеров
+app.use('/', require('./routes/index')); // отвечает за выдачу ресурсов на вервер
 app.use('/upload', require('./routes/upload'));
 app.use('/contact', require('./routes/mail'));
 app.use('/addpost', require('./routes/addpost'));
 
 // 404 catch-all handler (middleware)
 app.use(function (req, res, next) {
-  res
-    .status(404)
-    .render('404');
+  res.status(404).render('404'); // если наши роутеры не найдут нужгую страницу будет вызван app.use
 });
 
 // 500 error handler (middleware)
-app.use(function (err, req, res, next) {
+app.use(function (err, req, res, next) { // если будет ошибка на странице
   console.error(err.stack);
-  res
-    .status(500)
-    .render('500');
+  res.status(500).render('500');
 });
 
 // запускаю сервер
-server.listen(3000, '92.53.105.224');
+server.listen(3000, 'localhost');
 server.on('listening', function () {
    if (!fs.existsSync(uploadDir)) {
     fs.mkdirSync(uploadDir);

@@ -1,5 +1,14 @@
-.menu
-    ul.menu__list
-        each href, title in links
-            li.menu__item
-                a(href=`${href}`).menu__link= title
+ul.menu__list
+	each list in menus
+		li.menu__item
+			if list.submenu
+				span.menu__link= list.text
+				ul.submenu__list
+					each sublist in list.submenu
+						li.submenu__item
+							if sublist
+								a.submenu__link(href=sublist.link)= sublist.text
+							else
+								a.submenu__link(href=sublist.link)= sublist.text
+			else
+					a.menu__link(href=list.link)= list.text

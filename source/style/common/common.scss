@@ -69,3 +69,32 @@ body{
   font-weight: 700;
   color: #eee;
 }
+.title{
+  font-family: 'PFAgoraSansPro-Regular';
+  font-size: 30px;
+  &:after{
+    content: "";
+    display: block;
+    width: 55px;
+    height: 2px;
+    text-align: center;
+    background: #03a87c;
+    margin: 10px 0 0 0;
+
+  }
+}
+.btn{
+  text-decoration: none;
+  font-family: 'RobotoCondensed-Light';
+  color: #000;
+  color: #03a87c;
+  border: 1px solid #03a87c;
+  padding: 7px 12px;
+  background: transparent;
+  border-radius: none;
+  cursor: pointer;
+  &:hover{
+      background: #03a87c;
+    color: #fff;
+    }
+}

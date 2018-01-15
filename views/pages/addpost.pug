@@ -7,13 +7,14 @@ block content
 				.container
 					.form-container
 						form.form#blog( method="POST")
-							.form__subtitle Добавить запись в блог
+							.form__subtitle.title Добавить запись в блог
 							.status 
 							label.form__input-line
 								input(name="title" type="text" placeholder="Заголовок").form__input
 							label.form__input-line
 								input(name="date" type="text" placeholder="Дата").form__input
-							textarea(placeholder="Ваша запись" name="text").form__textarea
+							textarea(placeholder="Ваша запись" name="text").form__textarea#textarea
 							.form__btns.form__input-line
-								input(name="" type="submit" value="Отправить").form__btn-send
-								input(name="" type="reset" value="Очистить").form__btn-reset
+								input(name="" type="submit" value="Отправить").form__btn-send.btn
+								input(name="" type="reset" value="Очистить").form__btn-reset.btn
+		include ../common/_footer

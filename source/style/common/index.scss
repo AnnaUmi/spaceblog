@@ -1,34 +1,4 @@
 /* start slider */
-/* .slider{
-	position: relative;
-	width: 1170px;
-}
-.slider__wrapper{
-	height: 450px;
-	width: 1100px;
-	text-align: center;
-	overflow: hidden;
-	margin: 0 auto;
-}
-.slide__img{
-	min-width: 100%;
-	min-height: 100%;
-	display: block;
-	margin: 0;
-	padding: 0;
-}
-.slider__item{
-	float: left;
-}
-.slider__list{
-	@include clearfix;
-	width: 5000px;
-	position: relative;
-	left: 0;
-	transition: .75s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-}
-
-*/
 .slider{
 	position: relative;
 	width: 100%;
@@ -79,3 +49,6 @@
 	left: 95%;
 } 
 /* end slider */
+.articles__indents-title{
+	margin: 25px 0;
+}

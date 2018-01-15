@@ -136,17 +136,16 @@ $(function(){
 // Create upload
 (function() {
 	const formUpload = document.querySelector('#upload');
-
 	function fileUpload(url, data, cb) {
 	let xhr = new XMLHttpRequest();
-	xhr.open('POST', url, true);
+	xhr.open('POST', url, true); // POST отправляем на сервер
 
 	xhr.onload = function (e) {
 		let result = JSON.parse(xhr.responseText);
 		cb(result.status);
   };
   
-  xhr.send(data);
+  xhr.send(data); // data отправляем на сервер
 }
 
 function prepareSendFile(e) {
@@ -222,6 +221,7 @@ function prepareSendPost(e) {
     date: formBlog.date.value,
     text: formBlog.text.value
   };
+  console.log(text.innerHTML)
   resultContainer.innerHTML = 'Sending...';
   sendAjaxJson('/addpost', data, function (data) {
     resultContainer.innerHTML = data;
@@ -229,4 +229,3 @@ function prepareSendPost(e) {
 }
 
 }());
-

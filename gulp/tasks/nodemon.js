@@ -17,8 +17,7 @@ module.exports = function () {
         cb();
       }
       called = true;
-    })
-      .on('restart', function onRestart() {
+    }).on('restart', function onRestart() {
         // reload connected browsers after a slight delay
         setTimeout(function reload() {
           $.browserSync.reload({stream: false});

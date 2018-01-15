@@ -6,7 +6,8 @@ global.$ = {
   path: {
     task: require('./gulp/paths/tasks.js'),
     jsFoundation: require('./gulp/paths/js.foundation.js'),
-    cssFoundation: require('./gulp/paths/css.foundation.js'),
+    jsTinymce: require('./gulp/paths/js.tinymce.js'),
+    cssTinymce: require('./gulp/paths/css.tinymce.js'),
     app: require('./gulp/paths/app.js')
   },
   gulp: require('gulp'),
@@ -25,11 +26,12 @@ $.gulp.task('default', $.gulp.series(
   $.gulp.parallel(
     'sass',
     'js:foundation',
+    'js:tinymce',
     'js:process',
+    'css:tinymce',
     'copy:image',
     'copy:fonts',
     'copy:js',
-    'css:foundation',
     'sprite:svg'
   ),
   $.gulp.parallel(

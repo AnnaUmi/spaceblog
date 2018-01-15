@@ -24,27 +24,18 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
-router.get('/', function(req, res) {
-  let obj = {title: 'Главная страница'};
+router.get('/', function(req, res) { // обработчик маршрута, при '/' - путь по которому выполнился запрос + function - cb ф
+  let obj = {title: 'Главная страница'}; // создаем объект, кот будем передавать в наш шаблон
   const Model = mongoose.model('pic');
 
   Model.find().then(items => {
     Object.assign(obj, {items: items});
-    res.render('pages/index', obj);
+    res.render('pages/index', obj); // передаем шаблон и объект кот нужно отдать в браузер и отрендерить
   });
 
 });
 
-router.get('/gallery', function(req, res) {
-  let obj = {title: 'Главная страница'};
-  const Model = mongoose.model('pic');
 
-  Model.find().then(items => {
-    Object.assign(obj, {items: items});
-    res.render('pages/gallery', obj);
-  });
-
-});
 
 router.get('/blog', function(req, res) {
   let obj = {title: 'Blog'};
@@ -56,5 +47,6 @@ router.get('/blog', function(req, res) {
   });
   
 });
+
 
 module.exports = router;

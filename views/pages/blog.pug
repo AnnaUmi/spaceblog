@@ -5,9 +5,9 @@ block content
 			include ../common/_header
 			section.section
 				.container
-					ul.article-wrap
+					ul.article__list
 						each index in items
-							li.article
+							li.article__item
 								.article__title= index.title
 								.article__data= index.data
 								.article__text= index.body

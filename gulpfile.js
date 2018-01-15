@@ -6,8 +6,6 @@ global.$ = {
   path: {
     task: require('./gulp/paths/tasks.js'),
     jsFoundation: require('./gulp/paths/js.foundation.js'),
-    jsTinymce: require('./gulp/paths/js.tinymce.js'),
-    cssTinymce: require('./gulp/paths/css.tinymce.js'),
     app: require('./gulp/paths/app.js')
   },
   gulp: require('gulp'),

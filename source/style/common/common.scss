@@ -17,6 +17,7 @@ body{
 	width: 100%;
 	height: 100%;
 	margin: 0 auto;
+
 }
 /* start прижать футер */
 .wrapper{
@@ -97,4 +98,56 @@ body{
       background: #03a87c;
     color: #fff;
     }
+}
+.breadcrumbs__list{
+  margin: 0;
+  padding: 0;
+}
+.breadcrumbs__item{
+  list-style-type: none;
+  padding: 15px 0 15px 15px;
+  margin: 0;
+  display: inline-block;
+}
+.breadcrumbs__link{
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  &:before {
+    content: "-";
+    display: inline-block;
+    margin-right: 15px;
+    color: #fff;
+    vertical-align: middle;
+  }
+}
+.breadcrumbs__item:first-child .breadcrumbs__link:before{
+  display: none;
+  }
+.breadcrumbs{
+  background: #03a87c;
+}
+.pagination__list{
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.pagination__item{
+  list-style-type: none;
+  padding: 15px 0 15px 15px;
+  margin: 0;
+  display: inline-block;
+
+}
+.pagination__link{
+  text-decoration: none;
+  font-size: 12px;
+  font-family: "Roboto-Medium";
+  padding: 10px;
+  color: #000;
+}
+
+.pagination__link-active {
+    color: #03a87c;
+    font-weight: bold;
 }

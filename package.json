@@ -1,7 +1,7 @@
 {
-  "name": "loftschool-builder",
+  "name": "blog",
   "version": "1.0.0",
-  "author": "a.kalin",
+  "author": "Anna Vlasenko",
   "license": "ISC",
   "scripts": {},
   "devDependencies": {

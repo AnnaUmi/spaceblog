@@ -16,7 +16,52 @@
 	margin-top: 20px;
 }
 .postpic__date{
-	margin: 10px 0;
+	margin-top: 20px;
 	font-family: 'Roboto-Light';
 	font-size: 13px;
+}
+.postpic__text{
+	margin-top: 20px;
+}
+.blog-sidebar{
+	display: flex;
+	border-bottom: 1px solid #e7e7e7;
+	border-right: 1px solid #e7e7e7;
+	margin-top: 25px;
+}
+.sidebar{
+	width: 20%;
+	border-left: 1px solid #e7e7e7;
+	border-top: 1px solid #e7e7e7;
+}
+.main{
+	width: 80%;
+	border-left: 1px solid #e7e7e7;
+	padding: 0 25px;
+}
+.sidebar__list{
+	margin: 0;
+	padding: 0;
+}
+.sidebar__item{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+.sidebar__link{
+	text-decoration: none;
+	color: #000;
+	font-size: 18px;
+	padding: 10px;
+	display: block;
+	border-bottom: 1px solid #e7e7e7;
+	&:hover{
+		color: #03a87c;
+	}
+}
+.sidebar__header{
+	background: #e7e7e7;
+	padding: 10px;
+	display: block;
+	font-size: 20px;
 }

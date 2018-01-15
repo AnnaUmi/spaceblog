@@ -9,13 +9,13 @@ block content
 						.slider__wrapper
 							.slider__list
 								.slider__item.slider__item--active
-									img(src="assets/img/slider/slide-1.jpg").slider__img
+									img(src="assets/img/slider/slide-1.jpg" alt="pic").slider__img
 								.slider__item
-									img(src="assets/img/slider/slide-2.jpg").slider__img
+									img(src="assets/img/slider/slide-2.jpg" alt="pic").slider__img
 								.slider__item
-									img(src="assets/img/slider/slide-3.jpg").slider__img
+									img(src="assets/img/slider/slide-3.jpg" alt="pic").slider__img
 								.slider__item
-									img(src="assets/img/slider/slide-4.jpg").slider__img
+									img(src="assets/img/slider/slide-4.jpg" alt="pic").slider__img
 						.slider__nav
 							a(href="#").slider__arrow.slider__arrow--left
 								svg.slider__svg
@@ -30,45 +30,46 @@ block content
 						.articles__wrapper
 							a(href="#").articles__item
 								.articles__picture 
-									img(src="assets/img/articles/aurora.jpg").articles__img
+									img(src="assets/img/articles/aurora.jpg" alt="pic").articles__img
 								.articles__info
 									.articles__title Что такое северное сияние?
 									.articles__descr Северное сияние — это яркое проявление того, как магнитное поле защищает нас от солнечного ветра. 
 									.articles__user Анна Власенко
 							a(href="#").articles__item
 								.articles__picture 
-									img(src="assets/img/articles/aurora.jpg").articles__img
+									img(src="assets/img/articles/aurora.jpg" alt="pic").articles__img
 								.articles__info
 									.articles__title Что такое северное сияние?
 									.articles__descr Северное сияние — это яркое проявление того, как магнитное поле защищает нас от солнечного ветра. 
 									.articles__user Анна Власенко
 							a(href="#").articles__item
 								.articles__picture 
-									img(src="assets/img/articles/aurora.jpg").articles__img
+									img(src="assets/img/articles/aurora.jpg" alt="pic").articles__img
 								.articles__info
 									.articles__title Что такое северное сияние?
 									.articles__descr Северное сияние — это яркое проявление того, как магнитное поле защищает нас от солнечного ветра. 
 									.articles__user Анна Власенко
 							a(href="#").articles__item
 								.articles__picture 
-									img(src="assets/img/articles/aurora.jpg").articles__img
+									img(src="assets/img/articles/aurora.jpg" alt="pic").articles__img
 								.articles__info
 									.articles__title Что такое северное сияние?
 									.articles__descr Северное сияние — это яркое проявление того, как магнитное поле защищает нас от солнечного ветра. 
 									.articles__user Анна Власенко
 							a(href="#").articles__item
 								.articles__picture 
-									img(src="assets/img/articles/aurora.jpg").articles__img
+									img(src="assets/img/articles/aurora.jpg" alt="pic").articles__img
 								.articles__info
 									.articles__title Что такое северное сияние?
 									.articles__descr Северное сияние — это яркое проявление того, как магнитное поле защищает нас от солнечного ветра. 
 									.articles__user Анна Власенко
 
-			section.section
-				ul.gallery__list
+					section.section
+						.title Галлерея
+						ul.gallery__list
 							each index in items
 								li.gallery__item
-									img(src=`${index.picture}`).gallery__img
+									img(src=`${index.picture}` alt="pic").gallery__img
 									span= index.name
 
 

@@ -1,16 +1,47 @@
 @media(max-width: 1200px) {
-	.container{
+	.header__top{
+		padding: 10px;
 	}
 }
 @media(max-width: 900px) {
 	.mobil-nav__wrapper{
 	display: block;
 	}
+
 	.header__mobil{
 		display: block;
 	}
 	.menu__list{
 		display: none;
 	}
-	
+	.blog-sidebar{
+		display: block;
+	}
+	.main{
+		width: 100%;
+		margin-top: 25px;
+	}
+	.sidebar{
+		display: none;
+	}
+	.header__menu {
+    margin-bottom: 0px;
+	}
+}
+@media(max-width: 670px) {
+	.search__form{
+		display: none;
+	}
+}
+@media(max-width: 400px) {
+	.pagination__item{
+		padding: 10px 0;
+	}
+	.logo__title{
+		font-size: 25px;
+	}
+	.logo__svg{
+		width: 30px;
+		height: 30px;
+	}
 }

@@ -10,5 +10,6 @@ block content
 							each index in items
 								figure
 									p
-										img(src=`${index.picture}`)
+										img(src=`${index.picture}` alt="pic")
 									figcaption= index.name
+		include ../common/_footer

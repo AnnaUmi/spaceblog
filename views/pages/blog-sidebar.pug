@@ -5,13 +5,43 @@ block content
 			include ../common/_header
 			section.section
 				.container
-						ul.postpic__list
-							each index in items
-								li.postpic__item
-									.title.postpic__tile= index.title
-									img(src=`${index.picture}`).postpic__img
-									.postpic__date= index.date
-									.postpic__text= index.name
-			
-					
+					.breadcrumbs
+							ul.breadcrumbs__list
+								li.breadcrumbs__item
+									a(href="").breadcrumbs__link Главная
+								li.breadcrumbs__item
+									a(href="").breadcrumbs__link Блог
+					.blog-sidebar
+						aside.sidebar
+							.sidebar__header Дополнительные ссылки
+							ul.sidebar__list
+								each href, title in links
+									li.sidebar__item
+										a(href=`${href}`).sidebar__link= title	
+						main.main
+							ul.postpic__list
+								each index in items
+									li.postpic__item
+										.title.postpic__tile= index.title
+										img(src=`${index.picture}` alt="pic").postpic__img
+										.postpic__text= index.name
+										.postpic__date= index.date
+					.pagination
+								ul.pagination__list
+									li.pagination__item
+										a(href="#").pagination__link.pagination__link-active 1
+									li.pagination__item
+										a(href="#").pagination__link 2	
+									li.pagination__item
+										a(href="#").pagination__link 3	
+									li.pagination__item
+										a(href="#").pagination__link 4	
+									li.pagination__item
+										a(href="#").pagination__link 5	
+									li.pagination__item
+										a(href="#").pagination__link 6	
+									li.pagination__item
+										a(href="#").pagination__link 7	
+									li.pagination__item
+										a(href="#").pagination__link 8				
 		include ../common/_footer

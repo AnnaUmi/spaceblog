@@ -26,9 +26,7 @@ $.gulp.task('default', $.gulp.series(
   $.gulp.parallel(
     'sass',
     'js:foundation',
-    'js:tinymce',
     'js:process',
-    'css:tinymce',
     'copy:image',
     'copy:fonts',
     'copy:js',

@@ -18,7 +18,7 @@ mongoose.connect('mongodb://anna_umi:945xdh422@ds247077.mlab.com:47077/savemyblo
 //подключаем модели(сущности, описывающие коллекции базы данных)
 require('./models/blog');
 require('./models/pic');
-require('./models/user');
+require('./models/blogpic');
 
 // подключаю шаблонизатор
 app.set('views', path.join(__dirname, 'views'));
@@ -36,6 +36,8 @@ app.use('/', require('./routes/index')); // отвечает за выдачу �
 app.use('/upload', require('./routes/upload'));
 app.use('/contact', require('./routes/mail'));
 app.use('/addpost', require('./routes/addpost'));
+app.use('/addpost-sidebar', require('./routes/addpost-sidebar'));
+app.use('/blog-sidebar', require('./routes/blog-sidebar'));
 
 // 404 catch-all handler (middleware)
 app.use(function (req, res, next) {
@@ -51,12 +53,12 @@ app.use(function (err, req, res, next) { // если будет ошибка н�
 // запускаю сервер
 server.listen(3000, 'localhost');
 server.on('listening', function () {
-   if (!fs.existsSync(uploadDir)) {
+   if (!fs.existsSync(uploadDir)) { // если нет мойей папки upload то сосздать
     fs.mkdirSync(uploadDir);
   }
   console.log('Express server started on port %s at %s', server.address().port, server.address().address);
 });
-
+// для pug
 if (app.get('env') === 'development') {
   app.locals.pretty = true;
 }

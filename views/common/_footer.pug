@@ -3,19 +3,10 @@ footer.footer
 		.footer__content
 			.footer-links.footer__menu
 					ul.footer-links__list
-						- 
-							items = [
-								['Главная', 'index.html'],
-								['Новости', 'news.html'],
-								['Статьи', 'articles.html'],
-								['Фото', 'photo.html'],
-								['О проекте', 'about.html'],
-								['Спонсоры', 'about.html'],
-								['Контакты', 'contacts.html']
-													]
-						each item in items
-										li.footer-links__item
-												a(href=item[1]).footer-links__link=item[0]
+						each href, title in links
+							li.footer-links__item
+								a(href=`${href}`).footer-links__link= title
+
 			.socials.footer__socials
 				ul.socials__list
 					-

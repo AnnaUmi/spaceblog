@@ -1,0 +1,23 @@
+extends ../_template
+block content
+	.wrapper
+		.content
+			include ../common/_header
+			section.section
+				.container
+					form.form#uploadblog(action='/addpost-sidebar' method="POST" enctype="multipart/form-data")
+						form__subtitle.title Напишите статью
+						.status
+						label.form__input-line
+							input(name="photo" type="file" required accept="image/*").form__input#file-select
+						label.form__input-line
+							input(name="title" type="text" placeholder="Заголовок").form__input#file-title
+						label.form__input-line
+							input(name="date" type="text" placeholder="Дата").form__input#file-date
+						label.form__input-line
+							textarea(name="name" type="text" placeholder="Статья").form__textarea#file-desc
+						.form__btns.form__input-line
+							input(name="" type="submit" value="Отправить").form__btn-send.btn
+							input(name="" type="reset" value="Очистить").form__btn-reset.btn
+					
+		include ../common/_footer

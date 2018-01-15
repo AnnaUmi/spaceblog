@@ -7,9 +7,7 @@ const mongoose = require('mongoose');
 const config = require('../config.json');
 
 router.get('/', function (req, res) {
-  let obj = {
-    title: 'Загрузка картинки'
-  };
+  let obj = {title: 'Загрузка картинки'};
   res.render('pages/upload', obj);
 });
 

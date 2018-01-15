@@ -1,0 +1,17 @@
+extends ../_template
+block content
+	.wrapper
+		.content
+			include ../common/_header
+			section.section
+				.container
+						ul.postpic__list
+							each index in items
+								li.postpic__item
+									.title.postpic__tile= index.title
+									img(src=`${index.picture}`).postpic__img
+									.postpic__date= index.date
+									.postpic__text= index.name
+			
+					
+		include ../common/_footer

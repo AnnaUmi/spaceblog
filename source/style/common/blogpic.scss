@@ -1,0 +1,22 @@
+.postpic__list{
+	margin: 0;
+	padding: 0;
+}
+.postpic__item{
+	list-style-type: none;
+	padding: 0;
+	margin-bottom: 25px;
+}
+.postpic__img{
+	display: block;
+	margin: 0 auto;
+	padding: 0;
+	max-height: 350px;
+	width: 100%;
+	margin-top: 20px;
+}
+.postpic__date{
+	margin: 10px 0;
+	font-family: 'Roboto-Light';
+	font-size: 13px;
+}

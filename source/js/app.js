@@ -135,37 +135,45 @@ $(function(){
 
 // Create upload
 (function() {
-	const formUpload = document.querySelector('#upload');
-	function fileUpload(url, data, cb) {
+  const formUploadBlog = document.querySelector('#uploadblog'); 
+
+//получаем статус
+	function fileUpload(url, data, cb) { // принимает url, какие то значения и вызывает callback
 	let xhr = new XMLHttpRequest();
 	xhr.open('POST', url, true); // POST отправляем на сервер
 
 	xhr.onload = function (e) {
-		let result = JSON.parse(xhr.responseText);
+		let result = JSON.parse(xhr.responseText); // xhr.responseText = {"status":"Картинка успешно загружена"}
 		cb(result.status);
+    console.log(xhr.responseText);
+    console.log(result.status)
   };
   
   xhr.send(data); // data отправляем на сервер
 }
-
-function prepareSendFile(e) {
+function prepareSendBlogpic(e) {
   e.preventDefault();
   let resultContainer = document.querySelector('.status');
   let formData = new FormData();
-  let file = document.querySelector('#file-select').files[0];
-  let name = document.querySelector('#file-desc').value;
+  let file = document.querySelector('#file-select').files[0]; // получаем сам файл
+  let name = document.querySelector('#file-desc').value; // имя файла (описание)
+  let title = document.querySelector('#file-title').value;
+  let date = document.querySelector('#file-date').value;
 
-  formData.append('photo', file, file.name);
-  formData.append('name', name);
+  formData.append('photo', file, file.name); // вставояем файл
+  formData.append('name', name); // вставляем описание
+  formData.append('date', date);
+  formData.append('title', title);
 
   resultContainer.innerHTML = 'Uploading...';
-  fileUpload('/upload', formData, function (data) {
+  
+    fileUpload('/addpost-sidebar', formData, function(data) {
     resultContainer.innerHTML = data;
   });
-}
+  };
 
-if (formUpload) {
-  formUpload.addEventListener('submit', prepareSendFile);
+if (formUploadBlog) {
+  formUploadBlog.addEventListener('submit', prepareSendBlogpic);
 }
 
 }());

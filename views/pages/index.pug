@@ -65,10 +65,10 @@ block content
 									.articles__user Анна Власенко
 
 			section.section
-				ul
+				ul.gallery__list
 							each index in items
-								li
-									img(src=`${index.picture}`)
+								li.gallery__item
+									img(src=`${index.picture}`).gallery__img
 									span= index.name
 
 

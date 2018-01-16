@@ -12,8 +12,8 @@ const uploadDir = config.upload;
 
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise; // заменяем промисы монгусв на промисы ноды, так как они устаревшие у монгуса
-mongoose.connect('mongodb://anna_umi:945xdh422@ds131997.mlab.com:31997/testing');//локально работаю
-//mongoose.connect('mongodb://anna_umi:945xdh422@ds247077.mlab.com:47077/savemyblogposts');// на сервере
+//mongoose.connect('mongodb://anna_umi:945xdh422@ds131997.mlab.com:31997/testing');//локально работаю
+mongoose.connect('mongodb://anna_umi:945xdh422@ds247077.mlab.com:47077/savemyblogposts');// на сервере
 
 
 
@@ -54,8 +54,8 @@ app.use(function (err, req, res, next) { // если будет ошибка н�
 
 
 
-//server.listen(80, '92.53.105.224'); // here is running my web
-server.listen(3000, 'localhost');
+server.listen(80, '92.53.105.224'); // here is running my web
+//server.listen(3000, 'localhost');
 server.on('listening', function () {
    if (!fs.existsSync(uploadDir)) { // если нет мойей папки upload то сосздать
     fs.mkdirSync(uploadDir);

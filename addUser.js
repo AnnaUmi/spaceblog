@@ -5,7 +5,7 @@ const mongoose = require('mongoose'),
   readline = require('readline'),
   rl = readline.createInterface({input: process.stdin, output: process.stdout});
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://loftschool:567234@ds123080.mlab.com:23080/myportfolio');
+mongoose.connect('mongodb://anna_umi:945xdh422@ds131997.mlab.com:31997/testing');
 
 //логин и пароль, изначально пустые
 let login = '',

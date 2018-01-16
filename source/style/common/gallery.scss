@@ -1,17 +1,21 @@
 .gallery__list{
 	display: flex;
 	align-items: center;
-
-	margin: 0;
+	margin: 20px 0 25px 0;
 	padding: 0;
 	flex-wrap: wrap;
 }
 .gallery__item{
-	width: calc(100%/4);;
+	width: calc(100%/4);
 	padding: 10px;
 	list-style-type: none;
+	position: relative;
 }
 .gallery__img{
 	max-width: 100%;
-	cursor: pointer;
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 0;
 }
+

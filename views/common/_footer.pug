@@ -9,12 +9,15 @@ footer.footer
 
 			.socials.footer__socials
 				ul.socials__list
-					-
-						items = [
-							['fb', "#"],
-							['instagram', "#"],
-							['twiter', "#"]
-						]
-					each item in items
-							li.socials__item
-								a(href=item[1]).socials__link=item[0]
+					li.socials__item
+						a(href="#").socials__link
+							svg.socials__svg
+								use(xlink:href='/assets/img/sprite.svg#facebook-logo-button')
+					li.socials__item
+						a(href="#").socials__link
+							svg.socials__svg
+								use(xlink:href='/assets/img/sprite.svg#social-instagram-circle')
+					li.socials__item
+						a(href="#").socials__link
+							svg.socials__svg
+								use(xlink:href='/assets/img/sprite.svg#twitter')

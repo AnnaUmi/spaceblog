@@ -93,50 +93,12 @@ $(function(){
     	sticky_nav();
    })
 });
+/*upload blog*/
 
-// Create a lightbox
+/*get status*/
 (function() {
-  var $lightbox = $("<div class='lightbox'></div>");
-  var $img = $("<img>");
-  var $caption = $("<p class='caption'></p>");
-
-  // Add image and caption to lightbox
-
-  $lightbox
-    .append($img)
-    .append($caption);
-
-  // Add lighbox to document
-
-  $('body').append($lightbox);
-
-  $('.gallery img').click(function(e) {
-    e.preventDefault();
-
-    // Get image link and description
-    var src = $(this).attr("src");
-    var cap = $(this).attr("alt");
-
-    // Add data to lighbox
-
-    $img.attr('src', src);
-    $caption.text(cap);
-
-    // Show lightbox
-
-    $lightbox.fadeIn('fast');
-
-    $lightbox.click(function() {
-      $lightbox.fadeOut('fast');
-    });
-  });
-
-}());
-
-// Create upload
-(function() {
-  const formUploadBlog = document.querySelector('#uploadblog'); 
-
+  const formUploadBlog = document.querySelector('#uploadblog');
+  const formUpload = document.querySelector('#upload');
 //получаем статус
 	function fileUpload(url, data, cb) { // принимает url, какие то значения и вызывает callback
 	let xhr = new XMLHttpRequest();
@@ -174,8 +136,28 @@ function prepareSendBlogpic(e) {
 
 if (formUploadBlog) {
   formUploadBlog.addEventListener('submit', prepareSendBlogpic);
+};
+
+/*upload pictures*/
+function prepareSendFile(e) {
+  e.preventDefault();
+  let resultContainer = document.querySelector('.status');
+  let formData = new FormData();
+  let file = document.querySelector('#file-select').files[0];
+  let name = document.querySelector('#file-desc').value;
+
+  formData.append('photo', file, file.name);
+  formData.append('name', name);
+
+  resultContainer.innerHTML = 'Uploading...';
+  fileUpload('/upload', formData, function (data) {
+    resultContainer.innerHTML = data;
+  });
 }
 
+if (formUpload) {
+  formUpload.addEventListener('submit', prepareSendFile);
+}
 }());
 
 

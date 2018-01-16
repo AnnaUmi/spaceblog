@@ -12,7 +12,8 @@ const uploadDir = config.upload;
 
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise; // заменяем промисы монгусв на промисы ноды, так как они устаревшие у монгуса
-mongoose.connect('mongodb://anna_umi:945xdh422@ds131997.mlab.com:31997/testing');
+//mongoose.connect('mongodb://anna_umi:945xdh422@ds131997.mlab.com:31997/testing');//локально работаю
+mongoose.connect('mongodb://anna_umi:945xdh422@ds247077.mlab.com:47077/savemyblogposts');// на сервере
 
 
 

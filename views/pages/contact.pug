@@ -1,21 +1,37 @@
 extends ../_template
 block content
-  .wrapper
-    .content
-      include ../common/_header
-      section.section
-        .container
-          .contacts
-          .form-container
-            form.form#mail(action='contact' method="POST")
-              .form__subtitle Связаться со мной
-              .status
-                label.form__input-line
-                  input(name="name" type="text" placeholder="Имя").form__input
-                label.form__input-line
-                  input(name="email" type="email" placeholder="E-mail").form__input
-                textarea(placeholder="Ваше сообщение" name="text").form__textarea
-                .form__btns.form__input-line
-                input(name="" type="submit" value="Отправить").form__btn-send
-                input(name="" type="reset" value="Очистить").form__btn-reset
-    include ../common/_footer
+	.wrapper
+		.content
+			include ../common/_header
+			section.section
+				.container
+					.contacts
+						.form-container.contacts-form
+							form.form#mail(action='contact' method="POST")
+								.form__subtitle.title Напишите нам
+								.status
+								label.form__input-line
+									input(name="name" type="text" placeholder="Имя").contacts-form__input
+								label.form__input-line
+									input(name="email" type="email" placeholder="E-mail").contacts-form__input
+								textarea(placeholder="Ваше сообщение" name="text").contacts-form__textarea
+								.form__btns.form__input-line
+								input(name="" type="submit" value="Отправить").form__btn-send.btn
+								input(name="" type="reset" value="Очистить").form__btn-reset.btn
+						.contacts-info
+							.contacts-info__map
+								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2559.816740846964!2d14.469073815718374!3d50.08971787942729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b935c7b24f731%3A0x26d8a8d97a302ac2!2zQmlza3VwY292YSAxODkxLzI4LCAxMzAgMDAgUHJhaGEgMy3FvWnFvmtvdiwg0KfQtdGF0LjRjw!5e0!3m2!1sru!2sua!4v1516125924542" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+							.contacts-info__data
+								ul.contacts__list
+									li.contacts__item 
+										a.contacts__link(href="tel:+380630000000")
+											svg.contacts__svg
+												use(xlink:href='/assets/img/sprite.svg#phone-call-auricular-symbol-in-black')
+											span.contacts__phone +3 8063 000 00 00
+									li.contacts__item
+										a.contacts__link(href="mailto:info@spaceumi.com")
+											svg.contacts__svg
+												use(xlink:href='/assets/img/sprite.svg#email-envelope-outline')
+											span.contacts__email info@spaceumi.com
+						
+		include ../common/_footer

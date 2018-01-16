@@ -7,9 +7,7 @@
 	padding: 15px 5px;
 	margin-bottom: 25px;
 }
-.form__subtitle{
-	margin: 25px 0;
-}
+
 .form__input:focus, .form__textarea:focus {
 	border-color: #c6d6d1;
 	box-shadow: 0 0 5px rgba(44, 151, 222, 0.2);
@@ -21,10 +19,6 @@
 	border: none;
 	border: 1px solid #03a87c;
 	padding: 15px 5px;
-	margin-bottom: 25px;
-
-}
-.form__btns{
 	margin-bottom: 25px;
 }
 .status{
@@ -57,4 +51,7 @@
     margin: 10px 0 0 0;
 
   }
+}
+.form{
+	margin-bottom: 25px;
 }

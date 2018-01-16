@@ -42,7 +42,7 @@ router.get('/single-article-2', function(req, res) {
 
   Model.find().then(items => {
     Object.assign(obj, {items: items});
-    res.render('pages/single-article-1', obj);
+    res.render('pages/single-article-2', obj);
   });
   
 });

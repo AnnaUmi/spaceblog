@@ -51,9 +51,10 @@ app.use(function (err, req, res, next) { // если будет ошибка н�
   res.status(500).render('500');
 });
 
-// запускаю сервер
-//server.listen(80, '92.53.105.224');
-server.listen(3000, 'localhost');
+
+
+server.listen(80, '92.53.105.224'); // here is running my web
+//server.listen(3000, 'localhost');
 server.on('listening', function () {
    if (!fs.existsSync(uploadDir)) { // если нет мойей папки upload то сосздать
     fs.mkdirSync(uploadDir);

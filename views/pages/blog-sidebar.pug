@@ -8,9 +8,9 @@ block content
 					.breadcrumbs
 							ul.breadcrumbs__list
 								li.breadcrumbs__item
-									a(href="#").breadcrumbs__link Главная
+									a(href="/").breadcrumbs__link Главная
 								li.breadcrumbs__item
-									a(href="#").breadcrumbs__link Блог
+									a(href="/blog-sidebar").breadcrumbs__link Блог
 					.blog-sidebar
 						aside.sidebar
 							.sidebar__header Дополнительные ссылки
@@ -22,10 +22,12 @@ block content
 							ul.postpic__list
 								each index in items
 									li.postpic__item
-										.title.postpic__tile= index.title
-										img(src=`${index.picture}` alt="pic").postpic__img
-										.postpic__text= index.name
-										.postpic__date= index.date
+										a(href='/blog-sidebar/'+index._id).postpic__link
+											.title.postpic__tile= index.title
+											img(src=`${index.picture}` alt="pic").postpic__img
+											.postpic__text= index.name
+											a.btn.btn--margin-right(href='/blog-sidebar/edit/'+index._id) Edit
+											a.btn-del.btn(href="#" data-id=index._id).btn-del Delet
 					.pagination
 								ul.pagination__list
 									li.pagination__item

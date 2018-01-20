@@ -1,0 +1,19 @@
+extends ../_template
+block content
+	.wrapper
+		.content
+			include ../common/_header
+			section.section
+				.container
+					form.form(method="POST" enctype="multipart/form-data" action='/blog-sidebar/edit/'+article._id)
+						form__subtitle.title Напишите статью
+						label.form__label
+						input(name="title" type="text" placeholder="Заголовок" value=article.title).form__input#file-title
+						label.form__label
+						input(name="date" type="text" placeholder="Дата" value=article.date).form__input#file-date
+						label.form__label
+						textarea(name="name" type="text" placeholder="Статья" ).form__textarea#file-desc=article.name
+						input(name="" type="submit" value="Сохранить").btn
+
+					
+		include ../common/_footer

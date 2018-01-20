@@ -1,0 +1,23 @@
+extends ../_template
+block content
+	.wrapper
+		.content
+			include ../common/_header
+			section.single-article
+				.container
+					.breadcrumbs
+							ul.breadcrumbs__list
+								li.breadcrumbs__item
+									a(href="/").breadcrumbs__link Главная
+								li.breadcrumbs__item
+									a(href="/blog-sidebar").breadcrumbs__link Блог
+								li.breadcrumbs__item
+									a(href='/blog-sidebar/'+article._id).breadcrumbs__link #{article.title}
+					h1.title.single-article__title= article.title
+					img(src=`${article.picture}` alt="pic").single-article__img
+					.single-article__p= article.name
+					.single-article__date Дата публикации: #{article.date}
+					a.btn.btn--margin-right(href='/blog-sidebar/edit/'+article._id) Edit
+					a.btn-del.btn(href="#" data-id=article._id) Delet
+
+		include ../common/_footer

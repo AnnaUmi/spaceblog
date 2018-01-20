@@ -35,11 +35,6 @@ router.post('/', function (req, res) {
           fs.rename(files.photo.path, files.photo.name); // и переименовываем
         }
         let dir = config.upload.substr(config.upload.indexOf('/'));
-        // const item = new Model({name: fields.name, picture: path.join(dir, files.photo.name)});
-        // item.save().then(pic => {
-        //   res.json({status: 'Картинка успешно загружена'});
-        // });
-
         const item = new Model({name: fields.name, title: fields.title, date: fields.date });
         item.save().then(pic => {
           Model.update({_id: pic._id}, {$set: {picture: path.join(dir, files.photo.name)}}, {upsert: true})
@@ -48,8 +43,10 @@ router.post('/', function (req, res) {
             e => res.json({status: e.message})
           );
         });
-              });
+     });
   });
 });
+
+
 
 module.exports = router;

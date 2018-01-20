@@ -1,7 +1,20 @@
+/* start single-article */
+.single-article__img{
+	display: block;
+	margin: 0 auto;
+	padding: 0;
+	max-height: 350px;
+	max-width: 100%;
+}
 .single-article {
 	margin: 25px 0;
 }
 .single-article__p{
-	margin-bottom: 15px;
+	margin: 25px 0;
 	font-family: 'Roboto-Light';
 }
+.single-article__date{
+	margin-bottom: 25px;
+}
+
+/* end start single-article */

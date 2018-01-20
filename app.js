@@ -18,7 +18,6 @@ mongoose.connect('mongodb://anna_umi:945xdh422@ds247077.mlab.com:47077/savemyblo
 
 
 //подключаем модели(сущности, описывающие коллекции базы данных)
-require('./models/blog');
 require('./models/pic');
 require('./models/blogpic');
 
@@ -27,6 +26,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 // промежуточное по (midleware), все запросы кот, приходят на сервер пропускаются через промежуточное по
+// функция use обрабатывает middleware
 app.use(logger('dev'));
 app.use(bodyParser.json()); // распарсивание значений с post запросов
 app.use(bodyParser.urlencoded({extended: false}));

@@ -21,4 +21,4 @@ const BlogPicSchema = new Schema({
   });
 
 //просим mongoose сохранить модель для ее дальнейшего использования
-mongoose.model('blogpic', BlogPicSchema);
+let blogpic = module.exports = mongoose.model('blogpic', BlogPicSchema);

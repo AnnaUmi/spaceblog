@@ -1,17 +1,17 @@
-var slider = (function(){
+let slider = (function(){
 	return {
 		init: function(){
-			var _this = this;
+			let _this = this;
 			$('.slider__arrow').on('click', function(e){
 				e.preventDefault();
-				var $this = $(this);
-				var slides = $this.closest('.slider').find('.slider__item');
-				var activeSlide = slides.filter('.slider__item--active');
+				let $this = $(this);
+				let slides = $this.closest('.slider').find('.slider__item');
+				let activeSlide = slides.filter('.slider__item--active');
 				console.log(activeSlide)
-				var nextSlide = activeSlide.next();
-				var prevSlide = activeSlide.prev();
-				var firstSlide = slides.first();
-				var lastSlide = slides.last();
+				let nextSlide = activeSlide.next();
+				let prevSlide = activeSlide.prev();
+				let firstSlide = slides.first();
+				let lastSlide = slides.last();
 
 				if($this.hasClass('slider__arrow--right')) {
 					if(nextSlide.length){
@@ -32,13 +32,13 @@ var slider = (function(){
 
 		},
 		moveSlider: function(slide, direction){
-			var container = slide.closest('.slider');
-			var slides = container.find('.slider__item');
-			var activeSlide = slides.filter('.slider__item--active');
-			var slideWidth = slides.width();
-			var duration = 200;
-			var cssPosition = 0;
-			var slideMove = 0;
+			let container = slide.closest('.slider');
+			let slides = container.find('.slider__item');
+			let activeSlide = slides.filter('.slider__item--active');
+			let slideWidth = slides.width();
+			let duration = 200;
+			let cssPosition = 0;
+			let slideMove = 0;
 			if(direction === 'forward'){
 				cssPosition = slideWidth;
 				slideMove = -slideWidth
@@ -48,10 +48,10 @@ var slider = (function(){
 			}
 			slide.css('lef', cssPosition).addClass('slider__item--inslide');
 
-			var slideInMove = slides.filter('.slider__item--inslide');
+			let slideInMove = slides.filter('.slider__item--inslide');
 			activeSlide.animate({left: slideMove}, duration);
 			slideInMove.animate({left: 0}, duration, function(){
-				var $this = $(this);
+				let $this = $(this);
 				slides.css('left', '0').removeClass('slider__item--active');
 				$this.toggleClass('slider__item--inslide slider__item--active');
 			})
@@ -59,6 +59,7 @@ var slider = (function(){
 	}
 
 }());
+
 $(document).ready(function(){
 	if($('.slider').length){
 		slider.init();
@@ -76,23 +77,45 @@ $('.mobil-nav__list').on('mouseleave', function(){
    $('#mobil-nav').toggleClass('mobil-nav--nodisplay');
 })
 });
+/*end mobil nav*/
 
+/*sticky nav*/
 $(function(){
-    var sticky_nav_offset = $('.header__menu').offset().top;
-    var sticky_nav = function(){
-    	var scroll_top = $(window).scrollTop();
-    	if(scroll_top > sticky_nav_offset){
+    let stickyNav_offset = $('.header__menu').offset().top;
+    let stickyNav = function(){
+    	let scroll_top = $(window).scrollTop();
+    	if(scroll_top > stickyNav_offset){
     		$('.header__menu').addClass('fixed');
     	}else{
     		$('.header__menu').removeClass('fixed');
     	}
     };
-    sticky_nav();
+    stickyNav();
 
     $(window).scroll(function(){
-    	sticky_nav();
+    	stickyNav();
    })
 });
+/*end sticky nav*/
+
+/*cut body text*/
+let textPostInBlogPage = document.querySelectorAll('.postpic__text');
+    if(textPostInBlogPage){
+      for(let i = 0; i < textPostInBlogPage.length; i++){
+      let text = textPostInBlogPage[i]
+      text.innerHTML = text.innerHTML.slice(0,250) + '...'
+}
+}
+
+let textPostInIndexPage = document.querySelectorAll('.articles__descr');
+    if( textPostInIndexPage){
+      for(let i = 0; i <  textPostInIndexPage.length; i++){
+      let text = textPostInIndexPage[i]
+      text.innerHTML = text.innerHTML.slice(0,80) + '...'
+}
+}
+/*end cut body text*/
+
 /*upload blog*/
 
 /*get status*/
@@ -219,3 +242,29 @@ function prepareSendPost(e) {
 }
 
 }());
+$(document).ready(function(){
+
+
+  let delBtn = document.querySelector('.btn-del');
+  if(delBtn){
+    delBtn.addEventListener('click', e => {
+    e.preventDefault();
+    let target = e.target;
+    const id = target.getAttribute('data-id');
+    console.log(id)
+    $.ajax({
+      type: 'DELETE',
+      url: '/blog-sidebar/'+id,
+      success: function(response){
+        alert('del art');
+        window.location.href='/blog-sidebar';
+      },
+      error: function(err){
+        console.log(err)
+      }
+    });
+  })
+  }
+  
+
+});

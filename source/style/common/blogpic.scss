@@ -15,13 +15,16 @@
 	width: 100%;
 	margin-top: 20px;
 }
+.postpic__link{
+	text-decoration: none;
+	color: #000;
+}
 .postpic__date{
-	margin-top: 20px;
 	font-family: 'Roboto-Light';
 	font-size: 13px;
 }
 .postpic__text{
-	margin-top: 20px;
+	margin: 25px 0;
 }
 .blog-sidebar{
 	display: flex;

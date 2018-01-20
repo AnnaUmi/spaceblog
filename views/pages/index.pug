@@ -28,48 +28,16 @@ block content
 					.articles
 						.title.articles__indents-title Последние статьи
 						.articles__wrapper
-							a(href="/single-article-1").articles__item
-								.articles__picture 
-									img(src="assets/img/articles/aurora.jpg" alt="pic").articles__img
-								.articles__info
-									.articles__title Что такое северное сияние?
-									.articles__descr Северное сияние — это яркое проявление того, как магнитное поле защищает нас от солнечного ветра. 
-									.articles__user Анна Власенко
-							a(href="/single-article-1").articles__item
-								.articles__picture 
-									img(src="assets/img/articles/aurora.jpg" alt="pic").articles__img
-								.articles__info
-									.articles__title Что такое северное сияние?
-									.articles__descr Северное сияние — это яркое проявление того, как магнитное поле защищает нас от солнечного ветра. 
-									.articles__user Анна Власенко
-							a(href="/single-article-1").articles__item
-								.articles__picture 
-									img(src="assets/img/articles/aurora.jpg" alt="pic").articles__img
-								.articles__info
-									.articles__title Что такое северное сияние?
-									.articles__descr Северное сияние — это яркое проявление того, как магнитное поле защищает нас от солнечного ветра. 
-									.articles__user Анна Власенко
-							a(href="/single-article-1").articles__item
-								.articles__picture 
-									img(src="assets/img/articles/aurora.jpg" alt="pic").articles__img
-								.articles__info
-									.articles__title Что такое северное сияние?
-									.articles__descr Северное сияние — это яркое проявление того, как магнитное поле защищает нас от солнечного ветра. 
-									.articles__user Анна Власенко
-							a(href="/single-article-1").articles__item
-								.articles__picture 
-									img(src="assets/img/articles/aurora.jpg" alt="pic").articles__img
-								.articles__info
-									.articles__title Что такое северное сияние?
-									.articles__descr Северное сияние — это яркое проявление того, как магнитное поле защищает нас от солнечного ветра. 
-									.articles__user Анна Власенко
-
-					section.gallery-mainpage
-						.title.gallery__title Галлерея
-						ul.gallery__list
-							each index in items
-								li.gallery__item
-									img(src=`${index.picture}` alt=`${index.name}`).gallery__img
+							each index in articles
+										a(href='/blog-sidebar/'+index._id).articles__item
+											.articles__picture
+												img(src=`${index.picture}` alt="pic").articles__img
+											.articles__info
+												.articles__title= index.title
+												.articles__descr= index.name
+												.articles__date= index.date
+						
+					
 
 
 		include ../common/_footer

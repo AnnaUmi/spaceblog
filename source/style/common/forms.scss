@@ -27,31 +27,6 @@
  	padding: 10px 0;
 
 }
-.article__list{
-	margin: 0;
-	padding: 0;
-}
-.article__item{
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	margin-bottom: 25px;
-}
-.article__title{
-	font-family: 'PFAgoraSansPro-Regular';
-  	font-size: 20px;
-  	margin-bottom: 15px;
-  &:after{
-    content: "";
-    display: block;
-    width: 55px;
-    height: 2px;
-    text-align: center;
-    background: #03a87c;
-    margin: 10px 0 0 0;
-
-  }
-}
 .form{
 	margin-bottom: 25px;
 }

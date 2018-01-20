@@ -1,0 +1,12 @@
+extends ../_template
+block content
+	.wrapper
+		.content
+			include ../common/_header
+			section.section
+				.container
+						h1.title.gallery__title Галлерея
+						ul.gallery__list
+							each index in items
+								li.gallery__item
+									img(src=`${index.picture}` alt=`${index.name}`).gallery__img

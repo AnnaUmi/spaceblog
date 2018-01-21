@@ -218,28 +218,6 @@ function sendAjaxJson(url, data, cb) {
   xhr.send(JSON.stringify(data));
 }
 
-//---- block Blog
-
-const formBlog = document.querySelector('#blog');
-
-if (formBlog) {
-  formBlog.addEventListener('submit', prepareSendPost);
-}
-
-function prepareSendPost(e) {
-  e.preventDefault();
-  let resultContainer = document.querySelector('.status');
-  let data = {
-    title: formBlog.title.value,
-    date: formBlog.date.value,
-    text: formBlog.text.value
-  };
-  console.log(text.innerHTML)
-  resultContainer.innerHTML = 'Sending...';
-  sendAjaxJson('/addpost', data, function (data) {
-    resultContainer.innerHTML = data;
-  });
-}
 
 }());
 $(document).ready(function(){

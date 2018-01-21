@@ -1,4 +1,4 @@
-'use strict';
+/*'use strict';
 const mongoose = require('mongoose');
 const crypto = require('crypto');
 const Schema = mongoose.Schema;
@@ -20,4 +20,4 @@ const UserSchema = new Schema({
 });
 
 //просим mongoose сохранить модель для ее дальнейшего использования
-mongoose.model('user', UserSchema);
+mongoose.model('user', UserSchema);*/

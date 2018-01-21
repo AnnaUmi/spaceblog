@@ -5,7 +5,7 @@
 	.contacts{
 		padding: 0 10px;
 	}
-	.single-article{
+	.single-article, .uploadblog, .upload{
 		padding: 0 10px;
 	}
 }
@@ -66,6 +66,9 @@
 	.socials__item{
 		margin: 15px auto;
 	}
+	.form__input{
+		width: 100%;
+	}
 }
 @media(max-width: 820px) {
 	.search__form{
@@ -114,7 +117,7 @@
 		border: none;
 		display: block;
 	}
-	.articles__user{
+	.articles__date{
 		position: relative;
 		bottom: 0;
 		left: 0;

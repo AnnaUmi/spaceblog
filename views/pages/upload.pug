@@ -3,16 +3,15 @@ block content
 	.wrapper
 		.content
 			include ../common/_header
-			section.section
+			section.upload
 				.container
 					form.form#upload(action='/upload' method="POST" enctype="multipart/form-data")
-						form__subtitle Загрузите картинку на сервер
+						h1.form__title.title Загрузите картинку на сервер
+						label.form__label(for="file-desc") Введите описание картинки:
+						input(name="name" type="text" placeholder="Описание картинки").form__input#file-desc
+						label.form__label(for="file-select") Выбрать файл картинка jpg/png:
+						input(name="photo" type="file" required accept="image/*").form__input#file-select
+						button(type="submit").form__btn-send.btn Отправить
+						button(type="reset").form__btn-reset.btn Очистить
 						.status
-						label.form__input-line
-							input(name="name" type="text" placeholder="Описание картинки").form__input#file-desc
-						label.form__input-line
-							input(name="photo" type="file" required accept="image/*").form__input#file-select
-						.form__btns.form__input-line
-							input(name="" type="submit" value="Отправить").form__btn-send.btn
-							input(name="" type="reset" value="Очистить").form__btn-reset.btn
 		include ../common/_footer

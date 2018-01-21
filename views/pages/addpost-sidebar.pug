@@ -3,21 +3,24 @@ block content
 	.wrapper
 		.content
 			include ../common/_header
-			section.section
+			section.uploadblog
 				.container
 					form.form#uploadblog(action='/addpost-sidebar' method="POST" enctype="multipart/form-data")
-						form__subtitle.title Напишите статью
+						h1.form__title.title Напишите статью
+						label.form__label(for="file-select") Введите описание картинки:
+						input(name="photo" type="file" required accept="image/*").form__input#file-select
+
+						label.form__label(for="file-title") Введите заголовок записи:
+						input(name="title" type="text" placeholder="Заголовок").form__input#file-title
+
+						label.form__label(for="file-date") Введите дату в любом формате:
+						input(name="date" type="text" placeholder="Дата").form__input#file-date
+
+						label.form__label(for="file-desc") Напишите статью:
+						textarea(name="name").form__textarea#file-desc
+						
+						button(type="submit").form__btn-send.btn Отправить
+						button(type="reset").form__btn-reset.btn Очистить
 						.status
-						label.form__input-line
-							input(name="photo" type="file" required accept="image/*").form__input#file-select
-						label.form__input-line
-							input(name="title" type="text" placeholder="Заголовок").form__input#file-title
-						label.form__input-line
-							input(name="date" type="text" placeholder="Дата").form__input#file-date
-						label.form__input-line
-							textarea(name="name" type="text" placeholder="Статья").form__textarea#file-desc
-						.form__btns.form__input-line
-							input(name="" type="submit" value="Отправить").form__btn-send.btn
-							input(name="" type="reset" value="Очистить").form__btn-reset.btn
 					
 		include ../common/_footer

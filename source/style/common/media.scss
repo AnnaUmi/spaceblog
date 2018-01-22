@@ -82,8 +82,15 @@
 	}
 	.contacts-info{
 		width: 100%;
-		
-		
+		margin-bottom: 20px;
+	}
+	.contacts__list{
+		position:relative;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		transform: translate(0%, 0%);
 	}
 	.form-container {
     	width: 100%;
@@ -99,6 +106,9 @@
 	}
 	.slider__arrow--right{
 		left: 90%;
+	}
+	.slider__descr{
+		font-size: 20px;
 	}
 }
 @media(max-width: 400px) {

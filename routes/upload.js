@@ -23,17 +23,18 @@ router.post('/', function (req, res) {
     }
     const Model = mongoose.model('pic');
 
+    // обработка картинки, если загружается картинка с однимаковым именим, обращаемся к методу rename модуля fs
     fs.rename(files.photo.path, path.join(config.upload, files.photo.name), function (err) {
         if (err) {
-          fs.unlink(path.join(config.upload, files.photo.name));
-          fs.rename(files.photo.path, files.photo.name);
+          fs.unlink(path.join(config.upload, files.photo.name)); // удалить
+          fs.rename(files.photo.path, files.photo.name); // перезалить
         }
         let dir = config.upload.substr(config.upload.indexOf('/'));
         // const item = new Model({name: fields.name, picture: path.join(dir, files.photo.name)});
         // item.save().then(pic => {
         //   res.json({status: 'Картинка успешно загружена'});
         // });
-
+        // обоаботка текстового поля
         const item = new Model({name: fields.name});
         item.save().then(pic => {
           Model.update({_id: pic._id}, {$set: {picture: path.join(dir, files.photo.name)}}, {upsert: true})

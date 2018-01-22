@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const logger = require('morgan'); // выполняет дебаг, все логи в консоле, отслеживаем ошибки
 const bodyParser = require('body-parser'); // для работы с полями формы (получать запросы)
-const server = http.createServer(app);
+const server = http.createServer(app); // использую нодовский сервер http и передаю в него app
 const currentStatic = require('./gulp/config').root; // наши статические данные с config.js и вытаскиваем парамерт root
 const config = require('./config.json');
 const uploadDir = config.upload;
@@ -14,8 +14,6 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise; // заменяем промисы монгусв на промисы ноды, так как они устаревшие у монгуса
 //mongoose.connect('mongodb://anna_umi:945xdh422@ds131997.mlab.com:31997/testing');//локально работаю
 mongoose.connect('mongodb://anna_umi:945xdh422@ds247077.mlab.com:47077/savemyblogposts');// на сервере
-
-
 
 //подключаем модели(сущности, описывающие коллекции базы данных)
 require('./models/pic');
@@ -34,10 +32,9 @@ app.use(express.static(path.join(__dirname, currentStatic)));
 
 
 // использование роутеров
-app.use('/', require('./routes/index')); // отвечает за выдачу ресурсов на вервер
+app.use('/', require('./routes/index')); 
 app.use('/upload', require('./routes/upload'));
 app.use('/contact', require('./routes/mail'));
-app.use('/addpost', require('./routes/addpost'));
 app.use('/addpost-sidebar', require('./routes/addpost-sidebar'));
 app.use('/blog-sidebar', require('./routes/blog-sidebar'));
 

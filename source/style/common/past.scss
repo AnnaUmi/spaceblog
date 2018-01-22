@@ -1,0 +1,29 @@
+.blog__list{
+	margin: 0;
+	padding: 0;
+}
+.blog__item{
+	list-style-type: none;
+	padding: 0;
+	margin-bottom: 25px;
+}
+.blog__img{
+	display: block;
+	margin: 0 auto;
+	padding: 0;
+	max-height: 350px;
+	max-width: 100%;
+}
+.blog__title{
+	margin-bottom: 25px;
+}
+.blog__date{
+	font-family: 'Roboto-Light';
+	font-size: 13px;
+}
+.blog__article {
+	margin: 25px 0;
+}
+.blog__textfield{
+	
+}

@@ -1,14 +1,14 @@
-.contacts{
+.contacts__wrapper{
 	display: flex;
-	margin-top: 25px;
 	flex-wrap: wrap;
 }
 .contacts-info{
 	width: 50%;
+	text-align: center;
+	position: relative;
 }
 .form-container{
 	width: 50%;
-	padding-right: 25px;
 }
 .contacts-form__textarea{
 	width: 100%;
@@ -17,7 +17,7 @@
 	border: none;
 	border: 1px solid #03a87c;
 	padding: 15px 5px;
-	margin-bottom: 25px;
+	margin-bottom: 20px;
 }
 .contacts-form__input{
 	display: block;
@@ -35,7 +35,11 @@
 .contacts__list{
 	margin: 0;
 	padding: 0;
-	margin-top: 25px;
+	position:absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
 }
 .contacts__svg{
 	width: 30px;
@@ -53,8 +57,11 @@
 }
 .contacts__link{
 	color: #000;
-	font-size: 20px;
+	font-size: 30px;
 	text-decoration: none;
 	display: inline-block;
 	vertical-align: middle;
+}
+.contacts{
+	margin: 25px 0;
 }

@@ -7,23 +7,21 @@ const config = require('../config.json');
 const path = require('path');
 
 router.get('/', function(req, res) { // обработчик маршрута, при '/' - путь по которому выполнился запрос + function - cb ф
-  let obj = {title: 'Главная страница'}; // создаем объект, кот будем передавать в наш шаблон
+  let obj = { title: 'Главная страница'};// создаем объект, кот будем передавать в наш шаблон
   const Model = mongoose.model('blogpic');
   Model.find().then(articles => {
     Object.assign(obj, {articles: articles});
    res.render('pages/index', obj); // передаем шаблон и объект кот нужно отдать в браузер и отрендерить
   });
-
 });
+
 router.get('/gallery', function(req, res) { // обработчик маршрута, при '/' - путь по которому выполнился запрос + function - cb ф
   let obj = {title: 'Галлерея'}; // создаем объект, кот будем передавать в наш шаблон
   const Model = mongoose.model('pic');
-
   Model.find().then(items => {
     Object.assign(obj, {items: items});
     res.render('pages/gallery', obj); // передаем шаблон и объект кот нужно отдать в браузер и отрендерить
   });
- 
 });
 
 
@@ -93,6 +91,9 @@ const Model = mongoose.model('blogpic');
   });
 });
 
-
+router.get('/past', function(req, res) { 
+  let obj = { title: 'Как было в самом начале'};
+   res.render('pages/past', obj); 
+});
 
 module.exports = router;

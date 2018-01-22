@@ -1,8 +1,8 @@
 {
   "upload":"public/upload", 
   "mail": {
-    "subject": "Сообщение с сайта-портфолио",
-    "user": "anna.a.vlasenko@gmail.com",
-    "pass": "***"
+    "subject": "Сообщение с блога",
+    "user": "spaceblogemail@gmail.com",
+    "pass": "TestMail2018"
   }
 }

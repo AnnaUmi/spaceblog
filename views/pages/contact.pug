@@ -3,14 +3,14 @@ block content
 	.wrapper
 		.content
 			include ../common/_header
-			section.section
+			section.contacts
 				.container
-					.contacts
+					.contacts__wrapper
 						.form-container.contacts-form
 							form.form#mail(action='contact' method="POST")
 								h1.form__title.title Напишите нам
-								label.form__label(for="contacts-form-name") Введите ваше имя: 
-								input(name="name" type="text" placeholder="Имя").contacts-form__input#contacts-form-name
+								label.form__label(for="contacts-form-name") Введите тему письма: 
+								input(name="subject" type="text" placeholder="Тема").contacts-form__input#contacts-form-name
 								label.form__label(for="contacts-form-email") Введите ваше email:
 								input(name="email" type="email" placeholder="E-mail").contacts-form__input#contacts-form-email
 								label.form__label(for="contacts-form-text") Введите сообщение:
@@ -19,8 +19,6 @@ block content
 								button(type="reset").form__btn-reset.btn Очистить
 								.status
 						.contacts-info
-							.contacts-info__map
-								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2559.816740846964!2d14.469073815718374!3d50.08971787942729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b935c7b24f731%3A0x26d8a8d97a302ac2!2zQmlza3VwY292YSAxODkxLzI4LCAxMzAgMDAgUHJhaGEgMy3FvWnFvmtvdiwg0KfQtdGF0LjRjw!5e0!3m2!1sru!2sua!4v1516125924542" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 							.contacts-info__data
 								ul.contacts__list
 									li.contacts__item 
@@ -33,5 +31,8 @@ block content
 											svg.contacts__svg
 												use(xlink:href='/assets/img/sprite.svg#email-envelope-outline')
 											span.contacts__email info@spaceumi.com
+					.contacts-info__map
+								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2559.816740846964!2d14.469073815718374!3d50.08971787942729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b935c7b24f731%3A0x26d8a8d97a302ac2!2zQmlza3VwY292YSAxODkxLzI4LCAxMzAgMDAgUHJhaGEgMy3FvWnFvmtvdiwg0KfQtdGF0LjRjw!5e0!3m2!1sru!2sua!4v1516125924542" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+							
 						
 		include ../common/_footer

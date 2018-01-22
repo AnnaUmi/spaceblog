@@ -34,7 +34,6 @@
     "nodemailer": "^4.4.1",
     "nodemailer-smtp-transport": "^2.7.4",
     "normalize.css": "~5.0.0",
-    "svgxuse": "^1.2.6",
-    "tinymce": "^4.7.4"
+    "svgxuse": "^1.2.6"
   }
 }

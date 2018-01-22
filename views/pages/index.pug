@@ -10,12 +10,16 @@ block content
 							.slider__list
 								.slider__item.slider__item--active
 									img(src="assets/img/slider/slide-1.jpg" alt="pic").slider__img
+									.slider__descr Спасибо всем за прекрасный курс!
 								.slider__item
 									img(src="assets/img/slider/slide-2.jpg" alt="pic").slider__img
+									.slider__descr Наша группа была замечательная!
 								.slider__item
 									img(src="assets/img/slider/slide-3.jpg" alt="pic").slider__img
+									.slider__descr Спасибо всем ребятам!
 								.slider__item
 									img(src="assets/img/slider/slide-4.jpg" alt="pic").slider__img
+									.slider__descr Мы здорово провели время!
 						.slider__nav
 							a(href="#").slider__arrow.slider__arrow--left
 								svg.slider__svg
@@ -26,7 +30,7 @@ block content
 			section.section
 				.container
 					.articles
-						.title.articles__indents-title Последние статьи
+						h1.title.articles__indents-title Последние статьи
 						.articles__wrapper
 							each index in articles
 										a(href='/blog-sidebar/'+index._id).articles__item

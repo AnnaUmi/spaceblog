@@ -5,15 +5,13 @@ const config = require('../config.json');
 const smtpTransport = require('nodemailer-smtp-transport');
 
 router.get('/', function (req, res) {
-  let obj = {
-    title: 'Связаться со мной'
-  };
+  let obj = { title: 'Контакты'};
   res.render('pages/contact', obj);
 });
 
 router.post('/', (req, res) => {
   //требуем наличия имени, обратной почты и текста
-  if (!req.body.name || !req.body.email || !req.body.text) {
+  if (!req.body.subject || !req.body.email || !req.body.text) {
     //если что-либо не указано - сообщаем об этом
     return res.json({status: 'Укажите данные!'});
   }
@@ -30,11 +28,7 @@ router.post('/', (req, res) => {
     from: req.body.email,
     to: config.mail.user,
     subject: config.mail.subject,
-    text: req
-      .body
-      .text
-      .trim()
-      .slice(0, 500)
+    text: req.body.text.trim().slice(0, 500)
   };
 
   //отправляем почту
@@ -42,6 +36,7 @@ router.post('/', (req, res) => {
     //если есть ошибки при отправке - сообщаем об этом
     if (error) {
       return res.json({status: 'При отправке письма произошла ошибка'});
+      console.log(error)
     }
     res.json({status: 'Письмо успешно отправлено'});
   });

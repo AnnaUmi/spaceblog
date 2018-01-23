@@ -28,8 +28,7 @@ function createBlogItem(addInputTitleValue, blogImgValue, addInputTextTitleValue
 
     const editButton = createElement('button', { className: 'blog__edit'}, 'Изменить');
     const deltButton = createElement('button', { className: 'blog__del'}, 'Удалить');
-    let nId = Math.floor(Math.random() *1000)
-    const blogMask = 'bl1_';
+    
     const listItem = createElement('li', { className: 'blog__item' }, articleTitle, blogImg, article, editInput, articleAutor, editButton,deltButton);
    
     if (typeof(Storage) != "undefined") {

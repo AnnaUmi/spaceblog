@@ -15,6 +15,18 @@
 	max-width: 100%;
 }
 .blog__title{
+	font-family: 'PFAgoraSansPro-Regular';
+  	font-size: 30px;
+  &:after{
+    content: "";
+    display: block;
+    width: 55px;
+    height: 2px;
+    text-align: center;
+    background: #03a87c;
+    margin: 10px 0 0 0;
+
+  }
 	margin-bottom: 25px;
 }
 .blog__date{
@@ -24,6 +36,65 @@
 .blog__article {
 	margin: 25px 0;
 }
-.blog__textfield{
 	
+.blog__textfield{
+display: none;
+}
+
+.editing .blog__textfield {
+    display: block;
+}
+.blog__input{
+	display: block;
+	border: none;
+	border-radius: none;
+	border: 1px solid #03a87c;
+	width: 30%;
+	padding: 15px 5px;
+	margin-bottom: 25px;
+}
+
+.blog__input:focus, .blog__textfield:focus {
+	border-color: #c6d6d1;
+	box-shadow: 0 0 5px rgba(44, 151, 222, 0.2);
+}
+.blog__textarea{
+	width: 100%;
+	resize: vertical;
+	min-height: 500px;
+	border: none;
+	border: 1px solid #03a87c;
+	padding: 15px 5px;
+	margin-bottom: 25px;
+}
+.blog__edit, .blog__del {
+	text-decoration: none;
+  	font-family: 'RobotoCondensed-Light';
+  	color: #000;
+  	color: #03a87c;
+  	border: 1px solid #03a87c;
+  	padding: 7px 12px;
+  	background: transparent;
+  	border-radius: none;
+  	cursor: pointer;
+  	margin-top: 20px;
+  &:hover{
+      background: #03a87c;
+    color: #fff;
+    }
+}
+.blog__edit{
+	margin-right: 10px;
+}
+.past{
+	margin-bottom: 25px;
+}
+.blog__textfield{
+	width: 100%;
+	resize: vertical;
+	min-height: 500px;
+	border: none;
+	border: 1px solid #03a87c;
+	padding: 15px 5px;
+	margin-bottom: 25px;
 }

@@ -129,8 +129,10 @@ span.menu__link{
 	
 	&:hover{
 		color: #03a87c;
-	}
-	
+	}	
+}
+.menu__link--active{
+	color: #03a87c;
 }
 /* end main menu */
 

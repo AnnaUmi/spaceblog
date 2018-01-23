@@ -7,21 +7,28 @@ block content
 				.container
 					ul#blog__list.blog__list
 						li.blog__item
-							.blog__title.title Title
+							.blog__title Title
 							img(src="assets/img/slider/slide-1.jpg").blog__img
 							.blog__article  В статье, будет рассматриваться процесс разработки простого блога, с сопутствующими пояснительными материалами, цель которых описать ... Для лучшего усвоения материала желательно иметь основные представления о языке программирования Javascrip
 							textarea(class="blog__textfield")
 							.blog__date 12.01.2018
 							button.blog__edit.btn Изменить
 							button.blog__del.btn Удалить
+					hr
 					form#blog__form.form
-						input(type="text" id="blog__title")
-						input( type="file"  accept="image/*" id="blog__img")
-						textarea( name="text" id="blog__input")
-						input(type="text" id="blog__date")
-						button(type="submin") Добавить запись
-					code.results__display
-	script(src='/assets/js/past.js' defer)
+						label(for="blog__title") Тема записи
+						input(type="text" id="blog__title").blog__input
+						label(for="blog__img") Загрузить картинку
+						input( type="file"  accept="image/*" id="blog__img").blog__input
+						label(for="blog__date") Добавить дату в удобном формате
+						input(type="text" id="blog__date").blog__input
+						label(for="blog__input") Добавить запись блога
+						textarea( name="text" id="blog__input").blog__textarea
+						
+						button(type="submin").btn Добавить запись
+		script(src='/assets/js/past.js' defer)
+		include ../common/_footer
+
 
 
 
